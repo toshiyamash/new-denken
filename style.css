@@ -1,0 +1,428 @@
+body {
+  height: 100vh;
+  width: 100%;
+  /* width: 1000px; */
+  margin: 0 auto;
+  background-color: black;
+  }
+
+/* 目次ページ関係 */
+.downmrgn{                          /* 目次の年号ボタンの下にマージン*/
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+button.downmrgn:hover{
+  font-weight: bold;
+	background-color: #96ecec;
+}
+.upmrgn{                          /* 目次年号位置調整*/
+  margin-top: 1.5rem;
+  margin-bottom: -0.1rem;
+}
+
+/* 問題・解答ページ関係 */
+
+/* ▼タブ表示関係 */
+.tab{
+  width: 100%;
+  margin: 0 auto;
+}  
+.tab-list{
+display: flex;
+/* justify-content: flex-end;  */
+padding-top: 30px;  
+position: fixed;
+right:0px;
+bottom: 5px;
+}
+.tab-list-item{
+width: 75px;
+height: 50px;
+background-color: rgb(225, 159, 241);
+font-weight: bold;
+text-align: center;
+padding: 8px 0;
+cursor: pointer;
+border-bottom: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;
+border-radius: 0.3rem;
+margin-top: -1px;
+/* position: relative; */
+/* z-index: 10; */
+}
+.tab-list-item:hover {
+	background: #96ecec;
+}
+.tab-contents{
+background-color: #ffffcc;
+display: none;
+padding: 20px;
+border: 1px solid black;
+/* position: relative; */
+/* z-index: 0; */
+padding-bottom: 58px;
+}
+.is-btn-active{
+background-color: #ffffcc;
+font-weight: bold;
+border-top: 1px solid #ffffcc ;
+cursor: default;
+}
+.is-btn-active:hover{
+background-color: #ffffcc;  
+}
+.is-contents-active{
+display: block;
+}
+/* ▲タブ表示関係ここまで */
+
+/* ▼次問・前問・目次ボタン */
+.inner {
+  display: flex;
+  padding-top: 30px;              
+  position: fixed;
+  bottom: 5px;
+}
+.inner button {
+  width: 75px;
+  height: 50px;
+  font-weight: bold;
+  background-color: rgb(225, 159, 241);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.inner button:hover {
+	background: #96ecec;
+}
+
+/* 画像横並び　2022-80 */
+#flexbox{
+  display:flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  background:#ffffcc;
+  width: 100%;
+  height:auto;
+  padding:0 20px;
+}
+.box-item{
+  background:#ffffcc;
+  text-align: center;
+  padding:0 10px;
+  border:none;
+}
+
+
+/* ▼一般装飾 */
+
+table {
+  width: 100%;
+  border-collapse:  collapse;     /* セルの線を重ねる */
+}
+th,td {
+  border: solid 1px;              /* 枠線指定 */
+  padding: 5px;                   /* セル内余白 */
+}
+.tdVertical{                   /* 表内縦書き */   
+  /* vertical-align:middle; */
+  writing-mode: vertical-lr;  
+}
+tr>*:empty{       /* tableの空白のセルに斜線↗（to left top）をひく https://csshtml.work/table-shasen/ */
+  background-image: linear-gradient(to left top, transparent calc(50% - 0.5px), #999 50%, #999 calc(50% + 0.5px), transparent calc(50% + 1px)) !important;
+}
+
+.bold{
+  font-weight: bold;           /* 太字 */
+}
+.textCenter{
+  text-align: center;
+}
+.textRight{
+  text-align: right; 
+}
+.space{
+  padding-left: 1rem;         /* 1文字空白 */
+}
+caption{
+  font-weight: bold;
+}
+.underln {
+  text-decoration: underline red;
+  text-underline-offset:0.2em;
+}
+.underlnblue {
+  text-decoration: underline rgb(4, 0, 255);
+  text-underline-offset:0.2em;
+}
+.whiteFrame{           /*文中の文字を囲む（白抜き問題等）*/
+  line-height: 225%;
+  padding:0px 5px; /* 枠と文字の空間 */
+  margin:0 5px; /* 枠の外の空間 */
+  background-color:transparent;/*rgb(255,255,255); /* 枠の背景色 */
+  border:2px solid rgb(0,0,0); /* 枠の線の太さ・種類・色 */
+  border-radius:0px; /* 枠の角を丸くする */
+  box-shadow: 0px 0px 0px #ddd; /*影をいれる*/
+  font-family:inherit; /* フォントの種類を継承する */
+  font-size:1em;	/* フォントの大きさ */
+}
+.fontTransparent{       /* 文字透明 */
+  opacity: 0;
+}
+.connectLine{          /* 問題文選択肢中つなぎ線 */ 
+  text-decoration-line: line-through;
+}
+
+img.inq25 {            /* 問題選択肢内画像2022-100*/
+  background-color: transparent;
+  width: auto;
+  height: 25px;
+  margin: auto; 
+  vertical-align: middle
+}
+
+/* 変数定義文中の変数svgサイズ */
+.varSize10{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 10px;
+}
+.varSize11{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 11px;
+}
+.varSize12{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 12px;
+}
+.varSize13{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 13px;
+}
+.varSize14{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 14px;
+}
+.varSize15{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 15px;
+}
+.varSize16{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 16px;
+}
+.varSize17{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 17px;
+}
+.varSize18{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 18px;
+}
+.varSize19{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 19px;
+}
+.varSize20{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 20px;
+}
+.varSize21{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 21px;
+}
+.varSize22{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 22px;
+}
+.varSize23{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 23px;
+}
+.varSize24{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 24px;
+}
+.varSize25{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 25px;
+}
+.varSize26{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 26px;
+}
+.varSize27{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 27px;
+}
+.varSize28{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 28px;
+}
+.varSize29{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 29px;
+}
+.varSize30{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 30px;
+}
+.varSize31{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 31px;
+}
+.varSize32{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 32px;
+}
+.varSize33{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 33px;
+}
+.varSize34{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 34px;
+}
+.varSize35{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 35px;
+}
+.varSize36{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 36px;
+}
+.varSize37{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 37px;
+}
+.varSize38{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 38px;
+}
+.varSize39{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 39px;
+}
+.varSize40{
+  padding: 0px 3px;
+  width: auto;
+  vertical-align: middle;
+  height: 40px;
+}
+
+.flex{             /*要素（表など）横並び*/
+  display: flex;
+  padding: 15px;
+}
+
+/* 画像キャプション */
+.imgcap {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem; 
+}
+/* 画像コピーライト */
+.imgcr {
+  text-align: center;
+  font-size: 0.5rem;
+}
+
+
+/* ▼レスポンシブル対応 */
+@media (width<1024px){
+  table{
+    width: 75%;
+    margin: auto;
+  }
+  img {
+    background-color: transparent;
+    margin: auto;
+    width: 60%;
+    }  
+}
+
+@media (width<768px){
+  body{
+    text-size-adjust: none;
+  }
+  table{
+    width: 95%;
+    margin: auto;
+  }
+  img {
+    background-color: transparent;
+    margin: auto;
+    width: 95%;
+    }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
